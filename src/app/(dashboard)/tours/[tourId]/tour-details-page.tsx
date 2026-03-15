@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useTourDetails } from "@/entities/tour/api/use-tour-details";
 import { TourDetailsCard } from "@/entities/tour/ui/tour-details-card";
 import { TourAssignmentsCard } from "@/entities/tour/ui/tour-assignments-card";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/ui/components/ui/button";
 
 interface TourDetailsPageProps {
     tourId: number;

@@ -1,4 +1,5 @@
 import {getToursList} from "@/server/repositories/tours.repository";
+import Link from "next/link";
 
 export default async function HomePage() {
     const tours = await getToursList();
@@ -25,6 +26,9 @@ export default async function HomePage() {
                                     key={tour.id}
                                     className="rounded-xl border p-4 transition-colors hover:bg-muted/40"
                                 >
+                                    <div className={'w-full flex justify-end items-center mb-4'}>
+                                        <Link className={'font-bold text-[blue] border-2 py-1 px-2'} href={`/tours/${tour.id}`}>Open details</Link>
+                                    </div>
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="space-y-1">
                                             <h3 className="text-lg font-semibold">{tour.tourName}</h3>
