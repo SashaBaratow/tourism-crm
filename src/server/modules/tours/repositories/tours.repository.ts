@@ -62,6 +62,35 @@ export class ToursRepository {
             })),
         };
     }
+    async createTour(data: {
+        tourName: string;
+        startDateTime: Date;
+        finishDateTime: Date;
+        durationMinutes: number;
+        touristsCount: number;
+        tourPrice: string;
+        status: "draft" | "planned" | "active" | "completed" | "cancelled";
+        description: string | null;
+        notes: string | null;
+    }) {
+
+        const [createdTour] = await db
+            .insert(tours)
+            .values({
+                tourName: data.tourName,
+                startDateTime: data.startDateTime,
+                finishDateTime: data.finishDateTime,
+                durationMinutes: data.durationMinutes,
+                touristsCount: data.touristsCount,
+                tourPrice: data.tourPrice,
+                status: data.status,
+                description: data.description,
+                notes: data.notes,
+            })
+            .returning();
+
+        return createdTour;
+    }
 }
 
 export const toursRepository = new ToursRepository();

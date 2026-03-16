@@ -2,6 +2,8 @@ import {getToursList} from "@/server/repositories/tours.repository";
 import Link from "next/link";
 
 export default async function HomePage() {
+
+
     const tours = await getToursList();
 
     return (
@@ -16,6 +18,7 @@ export default async function HomePage() {
 
                 <section className="rounded-2xl border bg-background p-6 shadow-sm">
                     <h2 className="mb-4 text-xl font-semibold">Tours</h2>
+                    <Link href={'/tours/create'}  > create new tour</Link>
 
                     {tours.length === 0 ? (
                         <p className="text-sm text-muted-foreground">No tours found.</p>

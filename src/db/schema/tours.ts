@@ -12,8 +12,8 @@ import { tourStatusEnum } from "./enums";
 export const tours = pgTable("tours", {
     id: serial("id").primaryKey(),
     tourName: varchar("tour_name", { length: 255 }).notNull(),
-    startDatetime: timestamp("start_datetime").notNull(),
-    finishDatetime: timestamp("finish_datetime").notNull(),
+    startDateTime: timestamp("start_datetime").notNull(),
+    finishDateTime: timestamp("finish_datetime").notNull(),
     durationMinutes: integer("duration_minutes").notNull(),
     touristsCount: integer("tourists_count").notNull().default(0),
     tourPrice: numeric("tour_price", { precision: 12, scale: 2 }),
