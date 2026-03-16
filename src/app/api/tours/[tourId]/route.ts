@@ -44,3 +44,36 @@ export async function GET(_request: NextRequest, context: RouteContext) {
         );
     }
 }
+
+export async function PATCH(request: NextRequest, context: RouteContext) {
+    try {
+        const { tourId } = await context.params;
+        const numericId = Number(tourId);
+
+        if (!Number.isInteger(numericId)) {
+            return NextResponse.json(
+                { message: "Invalid tour id" },
+                { status: 400 }
+            );
+        }
+
+        const body = await request.json();
+        const updatedTour = await toursService.updateTour(numericId, body);
+
+        if (!updatedTour) {
+            return NextResponse.json(
+                { message: "Tour not found" },
+                { status: 404 }
+            );
+        }
+
+        return NextResponse.json(updatedTour);
+    } catch (error) {
+        console.error("PATCH /api/tours/[id] error:", error);
+
+        return NextResponse.json(
+            { message: "Failed to update tour" },
+            { status: 500 }
+        );
+    }
+}

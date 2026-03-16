@@ -28,6 +28,7 @@ export default async function HomePage() {
                                 >
                                     <div className={'w-full flex justify-end items-center mb-4'}>
                                         <Link className={'font-bold text-[blue] border-2 py-1 px-2'} href={`/tours/${tour.id}`}>Open details</Link>
+                                        <Link className={'font-bold text-[blue] border-2 py-1 px-2'} href={`/tours/${tour.id}/edit`}>Edit</Link>
                                     </div>
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="space-y-1">
