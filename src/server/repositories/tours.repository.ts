@@ -9,6 +9,6 @@ export async function getToursList() {
                 },
             },
         },
-        orderBy: (tours, { asc }) => [asc(tours.startDatetime)],
+        orderBy: (tours, { asc }) => [asc(tours.startDateTime)],
     });
 }

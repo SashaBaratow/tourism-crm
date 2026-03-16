@@ -15,7 +15,5 @@ export async function createTourRequest(values: TourFormValues): Promise<{ id: n
 
         throw new Error(errorBody?.message || "Failed to create tour");
     }
-    console.log(response.json())
-
     return response.json();
 }

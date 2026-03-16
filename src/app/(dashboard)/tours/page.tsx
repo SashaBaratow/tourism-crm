@@ -39,10 +39,10 @@ export default async function HomePage() {
                                                 Tourists: {tour.touristsCount}
                                             </p>
                                             <p className="text-sm text-muted-foreground">
-                                                Start: {new Date(tour.startDatetime).toLocaleString()}
+                                                Start: {new Date(tour.startDateTime).toLocaleString()}
                                             </p>
                                             <p className="text-sm text-muted-foreground">
-                                                Finish: {new Date(tour.finishDatetime).toLocaleString()}
+                                                Finish: {new Date(tour.finishDateTime).toLocaleString()}
                                             </p>
                                         </div>
 

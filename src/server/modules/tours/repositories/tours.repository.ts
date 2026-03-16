@@ -37,8 +37,8 @@ export class ToursRepository {
         return {
             id: tour.id,
             tourName: tour.tourName,
-            startDateTime: tour.startDatetime.toISOString(),
-            finishDateTime: tour.finishDatetime.toISOString(),
+            startDateTime: tour.startDateTime.toISOString(),
+            finishDateTime: tour.finishDateTime.toISOString(),
             durationMinutes: tour.durationMinutes,
             touristsCount: tour.touristsCount,
             tourPrice: String(tour.tourPrice),
