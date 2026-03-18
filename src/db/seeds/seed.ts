@@ -90,8 +90,8 @@ async function seed() {
     await db.insert(tours).values([
         {
             tourName: "Issyk-Kul Weekend Tour",
-            startDatetime: new Date("2026-03-20T08:00:00"),
-            finishDatetime: new Date("2026-03-22T20:00:00"),
+            startDateTime: new Date("2026-03-20T08:00:00"),
+            finishDateTime: new Date("2026-03-22T20:00:00"),
             durationMinutes: 3600,
             touristsCount: 8,
             tourPrice: "25000",

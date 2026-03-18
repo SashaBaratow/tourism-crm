@@ -21,11 +21,12 @@ export const metadata: Metadata = {
     description: "Local CRM system for tourism company",
 };
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout(
+    {
+        children,
+    }: Readonly<{
+        children: React.ReactNode;
+    }>) {
     return (
         <html lang="en" className={cn("font-mono", jetbrainsMono.variable)}>
         <body

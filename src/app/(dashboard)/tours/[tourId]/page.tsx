@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { TourDetailsPage } from "./tour-details-page";
+import { TourDetailsPage } from "./tourDetailsPage";
 
 interface PageProps {
     params: Promise<{
